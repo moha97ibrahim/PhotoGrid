@@ -2,6 +2,7 @@
 
 App with NSCache, UICollectionView, MVC Pattern 
 
+
 ## CollectionView
 
 CollectionViewLayout is used to display item per row
@@ -110,4 +111,9 @@ Popup is added with gesture. It can move previous  and next image by swiping lef
   popupView.addGestureRecognizer(leftSwipe)
   popupView.addGestureRecognizer(rightSwipe)
 ```
+
+# Screeshot
+![alt text](https://github.com/moha97ibrahim/PhotoGrid/blob/c71dda09934d39d0cd963ef3bd1dd1f83597a102/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20-%202021-08-16%20at%2002.12.16.png)
+
+![alt text](https://github.com/moha97ibrahim/PhotoGrid/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20-%202021-08-16%20at%2002.12.21.png)
 
