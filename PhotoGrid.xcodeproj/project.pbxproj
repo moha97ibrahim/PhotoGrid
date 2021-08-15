@@ -15,6 +15,12 @@
 		EEBBD66026C83EAD005C46F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEBBD65E26C83EAD005C46F8 /* LaunchScreen.storyboard */; };
 		EEBBD66B26C83EAD005C46F8 /* PhotoGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD66A26C83EAD005C46F8 /* PhotoGridTests.swift */; };
 		EEBBD67626C83EAD005C46F8 /* PhotoGridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD67526C83EAD005C46F8 /* PhotoGridUITests.swift */; };
+		EEBBD68826C843D2005C46F8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD68626C843D2005C46F8 /* CollectionViewCell.swift */; };
+		EEBBD68926C843D2005C46F8 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEBBD68726C843D2005C46F8 /* CollectionViewCell.xib */; };
+		EEBBD68C26C84AC1005C46F8 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD68B26C84AC1005C46F8 /* ImageManager.swift */; };
+		EEBBD68E26C84F1D005C46F8 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD68D26C84F1D005C46F8 /* ImageData.swift */; };
+		EEBBD69126C8EC7D005C46F8 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD68F26C8EC7D005C46F8 /* PopupViewController.swift */; };
+		EEBBD69426C98A7D005C46F8 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD69326C98A7D005C46F8 /* LazyImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		EEBBD67126C83EAD005C46F8 /* PhotoGridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoGridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBBD67526C83EAD005C46F8 /* PhotoGridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridUITests.swift; sourceTree = "<group>"; };
 		EEBBD67726C83EAD005C46F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEBBD68626C843D2005C46F8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		EEBBD68726C843D2005C46F8 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		EEBBD68B26C84AC1005C46F8 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		EEBBD68D26C84F1D005C46F8 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		EEBBD68F26C8EC7D005C46F8 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		EEBBD69326C98A7D005C46F8 /* LazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +111,16 @@
 		EEBBD65226C83EAC005C46F8 /* PhotoGrid */ = {
 			isa = PBXGroup;
 			children = (
+				EEBBD68A26C84A74005C46F8 /* Api */,
+				EEBBD68526C83EF4005C46F8 /* Controller */,
+				EEBBD68426C83EEA005C46F8 /* View */,
+				EEBBD68326C83ECB005C46F8 /* Model */,
 				EEBBD65326C83EAC005C46F8 /* AppDelegate.swift */,
 				EEBBD65526C83EAC005C46F8 /* SceneDelegate.swift */,
-				EEBBD65726C83EAC005C46F8 /* ViewController.swift */,
-				EEBBD65926C83EAC005C46F8 /* Main.storyboard */,
 				EEBBD65C26C83EAD005C46F8 /* Assets.xcassets */,
 				EEBBD65E26C83EAD005C46F8 /* LaunchScreen.storyboard */,
 				EEBBD66126C83EAD005C46F8 /* Info.plist */,
+				EEBBD69326C98A7D005C46F8 /* LazyImageView.swift */,
 			);
 			path = PhotoGrid;
 			sourceTree = "<group>";
@@ -126,6 +141,41 @@
 				EEBBD67726C83EAD005C46F8 /* Info.plist */,
 			);
 			path = PhotoGridUITests;
+			sourceTree = "<group>";
+		};
+		EEBBD68326C83ECB005C46F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEBBD68D26C84F1D005C46F8 /* ImageData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EEBBD68426C83EEA005C46F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEBBD68726C843D2005C46F8 /* CollectionViewCell.xib */,
+				EEBBD65926C83EAC005C46F8 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEBBD68526C83EF4005C46F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EEBBD68F26C8EC7D005C46F8 /* PopupViewController.swift */,
+				EEBBD68626C843D2005C46F8 /* CollectionViewCell.swift */,
+				EEBBD65726C83EAC005C46F8 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EEBBD68A26C84A74005C46F8 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				EEBBD68B26C84AC1005C46F8 /* ImageManager.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +283,7 @@
 			files = (
 				EEBBD66026C83EAD005C46F8 /* LaunchScreen.storyboard in Resources */,
 				EEBBD65D26C83EAD005C46F8 /* Assets.xcassets in Resources */,
+				EEBBD68926C843D2005C46F8 /* CollectionViewCell.xib in Resources */,
 				EEBBD65B26C83EAC005C46F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +310,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEBBD65826C83EAC005C46F8 /* ViewController.swift in Sources */,
+				EEBBD68C26C84AC1005C46F8 /* ImageManager.swift in Sources */,
 				EEBBD65426C83EAC005C46F8 /* AppDelegate.swift in Sources */,
+				EEBBD68826C843D2005C46F8 /* CollectionViewCell.swift in Sources */,
+				EEBBD69426C98A7D005C46F8 /* LazyImageView.swift in Sources */,
 				EEBBD65626C83EAC005C46F8 /* SceneDelegate.swift in Sources */,
+				EEBBD68E26C84F1D005C46F8 /* ImageData.swift in Sources */,
+				EEBBD69126C8EC7D005C46F8 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
