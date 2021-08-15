@@ -9,10 +9,12 @@ import UIKit
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,ImageDataDelegate {
 
+    // MARK: Interface Builder
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    // MARK: Variables
     var imageManager = ImageManager()
     var data : ImageDatatoKV?
     var itemCount = 0
@@ -55,6 +57,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
        
     }
     
+    // MARK: - Collection View Flow Layout Delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return itemCount
     }
@@ -65,19 +68,16 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         if let image = data?.imageData[indexPath.row].url {
             let url = URL(string: image)
             if let cachedImage = self.imageCache.object(forKey: url as AnyObject){
-                //print("image loaded from cache")
                 cell.image.image = cachedImage
+                return cell
             }
-            
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url!)
                 //print("image downloaded from serve\(indexPath.row)")
                 DispatchQueue.main.async {
                     cell.image.image = UIImage(data: data!)
                     if let images = UIImage(data: data!){
-                    self.imageCache.setObject(images, forKey: url as AnyObject )
-                        cell.cellSpinner.stopAnimating()
-                        cell.cellSpinner.hidesWhenStopped = true
+                        self.onLoaded(image: images, url: url as AnyObject, cell: cell)
                     }
                 }
             }
@@ -109,6 +109,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
            
        }
  
+    // MARK: Update Data
     func didUpdateImageData(data: ImageDatatoKV) {
         DispatchQueue.main.async {
         self.data = data
@@ -118,7 +119,13 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             self.spinner.stopAnimating()
             self.spinner.hidesWhenStopped = true
         }
-  
+    }
+    
+    // MARK: onLoaded
+    func onLoaded(image : UIImage , url : AnyObject, cell : CollectionViewCell) {
+        self.imageCache.setObject(image, forKey: url as AnyObject )
+            cell.cellSpinner.stopAnimating()
+            cell.cellSpinner.hidesWhenStopped = true
     }
 }
 

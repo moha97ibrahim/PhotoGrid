@@ -15,7 +15,10 @@ protocol ImageDataDelegate {
 
 class ImageManager {
     
+    // MARK: Properties
     var imageDelegate : ImageDataDelegate?
+    
+    // MARK: Variables
     var imageCache = NSCache<AnyObject, AnyObject>()
     
     // MARK:-  Fetch Image Data
@@ -29,7 +32,6 @@ class ImageManager {
     
     func Request(request : NSMutableURLRequest){
         let session = URLSession.shared
-        
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, responce , error) -> Void in
             if error != nil {
                 print(error.debugDescription)
